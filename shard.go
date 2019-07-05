@@ -62,7 +62,8 @@ func (s *cacheShard) set(key string, hashedKey uint64, entry []byte) error {
 
 	if previousIndex := s.hashmap[hashedKey]; previousIndex != 0 {
 		if previousEntry, err := s.entries.Get(int(previousIndex)); err == nil {
-			resetKeyFromEntry(previousEntry)
+//			resetKeyFromEntry(previousEntry)
+			return nil
 		}
 	}
 
